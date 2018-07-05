@@ -11,7 +11,8 @@ interface baseButtonProps {
 }
 
 // 将组件属性接口与React元素属性接口进行合并
-type ButtonProps = baseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = baseButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 // 泛型第一个参数为Component的接口
 // 泛型第二个参数为state的接口
@@ -24,11 +25,11 @@ class Button extends React.Component<ButtonProps, any> {
   }
   render() {
     const { type, children, style, disabled, htmlType, loading } = this.props;
-    const btnType = disabled ? 'disabled' : (type || 'default');
+    const btnType = disabled ? 'disabled' : type || 'default';
     const buttonClass = classNames({
       ['ykx-button']: true,
       [`ykx-button-${btnType}`]: true,
-    })
+    });
     return (
       <button
         className={buttonClass}
@@ -36,7 +37,10 @@ class Button extends React.Component<ButtonProps, any> {
         onClick={this.onClick.bind(this)}
         disabled={disabled}
         type={htmlType || 'button'}
-      >{loading ? '加载中...' : ''}{children || 'button'}</button>
+      >
+        {loading ? '加载中...' : ''}
+        {children || 'button'}
+      </button>
     );
   }
 }

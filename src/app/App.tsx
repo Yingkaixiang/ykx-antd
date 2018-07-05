@@ -7,22 +7,34 @@ ReactDOM.render(
     <Button
       style={{ margin: 8 }}
       type="primary"
-      onClick={() => {console.log(123)}}
-    >primary</Button>
+      onClick={() => {
+        console.log(123);
+      }}
+    >
+      primary
+    </Button>
     <Button
       style={{ margin: 8 }}
-      onClick={() => {console.log(123)}}
-    >default</Button>
+      onClick={() => {
+        console.log(123);
+      }}
+    >
+      default
+    </Button>
     <Button
       style={{ margin: 8 }}
       disabled
-      onClick={() => {console.log(123)}}
-    >disabled</Button>
+      onClick={() => {
+        console.log(123);
+      }}
+    >
+      disabled
+    </Button>
   </div>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
-declare let module: any
+declare let module: any;
 if (module.hot) {
   module.hot.accept();
 }
