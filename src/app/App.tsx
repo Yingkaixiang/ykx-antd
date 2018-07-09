@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Button from './components/button/';
+import Radio from './components/radio/';
+import Input from './components/input/';
 
 ReactDOM.render(
   <div>
@@ -11,7 +13,17 @@ ReactDOM.render(
         console.log(123);
       }}
     >
-      primary
+      Primary
+    </Button>
+    <Button
+      style={{ margin: 8 }}
+      type="primary"
+      ghost
+      onClick={() => {
+        console.log(123);
+      }}
+    >
+      Primary
     </Button>
     <Button
       style={{ margin: 8 }}
@@ -19,7 +31,7 @@ ReactDOM.render(
         console.log(123);
       }}
     >
-      default
+      Default
     </Button>
     <Button
       style={{ margin: 8 }}
@@ -28,8 +40,10 @@ ReactDOM.render(
         console.log(123);
       }}
     >
-      disabled
+      Disabled
     </Button>
+    <Radio>Radio</Radio>
+    <Input />
   </div>,
   document.getElementById('root'),
 );

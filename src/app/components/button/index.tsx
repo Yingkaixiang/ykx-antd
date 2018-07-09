@@ -3,11 +3,12 @@ import classNames from 'classnames';
 import './index.less';
 
 interface baseButtonProps {
-  htmlType?: string;
   disabled?: boolean;
+  ghost?: boolean;
+  htmlType?: string;
   type?: string;
   loading?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 // 将组件属性接口与React元素属性接口进行合并
@@ -21,14 +22,26 @@ class Button extends React.Component<ButtonProps, any> {
     super(props);
   }
   onClick() {
-    this.props.onClick();
+    const { onClick } = this.props;
+    if (onClick) {
+      onClick();
+    }
   }
   render() {
-    const { type, children, style, disabled, htmlType, loading } = this.props;
+    const {
+      disabled,
+      ghost,
+      htmlType,
+      type,
+      children,
+      style,
+      loading,
+    } = this.props;
     const btnType = disabled ? 'disabled' : type || 'default';
     const buttonClass = classNames({
       ['ykx-button']: true,
       [`ykx-button-${btnType}`]: true,
+      [`ykx-button-${btnType}-ghost`]: ghost,
     });
     return (
       <button

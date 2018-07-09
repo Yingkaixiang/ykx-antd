@@ -1,0 +1,26 @@
+@import '../../style/default';
+
+:global {
+  .ykx-radio {
+    cursor: pointer;
+
+    &-inner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid #d9d9d9;
+      vertical-align: text-bottom;
+      // line-height: 1;
+
+      &-checked {
+        background-color: @primary-color;
+      }
+
+      & + * {
+        padding: 0 8px;
+        font-size: 14px;
+      }
+    }
+  }
+}

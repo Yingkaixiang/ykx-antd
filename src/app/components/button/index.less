@@ -1,4 +1,5 @@
-@primary-color: #1890ff;
+@import '../../style/default';
+
 @default-color: #d9d9d9;
 
 :global {
@@ -18,6 +19,12 @@
       color: #fff;
       background-color: @primary-color;
       border-color: @primary-color;
+
+      &-ghost {
+        color: @primary-color;
+        border-color: @primary-color;
+        background-color: transparent;
+      }
     }
 
     &-default {
