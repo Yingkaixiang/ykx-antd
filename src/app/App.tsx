@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import Button from './components/button/';
-import Radio from './components/radio/';
-import Input from './components/input/';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import Button from "./components/button/";
+import Input from "./components/input/";
+import Radio from "./components/radio/";
 
 ReactDOM.render(
   <div>
@@ -45,7 +45,7 @@ ReactDOM.render(
     <Radio>Radio</Radio>
     <Input />
   </div>,
-  document.getElementById('root'),
+  document.getElementById("root"),
 );
 
 declare let module: any;

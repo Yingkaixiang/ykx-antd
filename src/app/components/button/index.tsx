@@ -1,8 +1,8 @@
-import * as React from 'react';
-import classNames from 'classnames';
-import './index.less';
+import classNames from "classnames";
+import * as React from "react";
+import "./index.less";
 
-interface baseButtonProps {
+interface IBaseButtonProps {
   disabled?: boolean;
   ghost?: boolean;
   htmlType?: string;
@@ -12,7 +12,7 @@ interface baseButtonProps {
 }
 
 // 将组件属性接口与React元素属性接口进行合并
-type ButtonProps = baseButtonProps &
+type ButtonProps = IBaseButtonProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 // 泛型第一个参数为Component的接口
@@ -21,13 +21,13 @@ class Button extends React.Component<ButtonProps, any> {
   constructor(props: ButtonProps) {
     super(props);
   }
-  onClick() {
+  public onClick() {
     const { onClick } = this.props;
     if (onClick) {
       onClick();
     }
   }
-  render() {
+  public render() {
     const {
       disabled,
       ghost,
@@ -37,9 +37,9 @@ class Button extends React.Component<ButtonProps, any> {
       style,
       loading,
     } = this.props;
-    const btnType = disabled ? 'disabled' : type || 'default';
+    const btnType = disabled ? "disabled" : type || "default";
     const buttonClass = classNames({
-      ['ykx-button']: true,
+      ["ykx-button"]: true,
       [`ykx-button-${btnType}`]: true,
       [`ykx-button-${btnType}-ghost`]: ghost,
     });
@@ -49,10 +49,10 @@ class Button extends React.Component<ButtonProps, any> {
         style={style}
         onClick={this.onClick.bind(this)}
         disabled={disabled}
-        type={htmlType || 'button'}
+        type={htmlType || "button"}
       >
-        {loading ? '加载中...' : ''}
-        {children || 'button'}
+        {loading ? "加载中..." : ""}
+        {children || "button"}
       </button>
     );
   }

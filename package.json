@@ -16,6 +16,7 @@
     "express": "^4.16.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "tslint": "5.10.0",
     "typescript": "^2.9.2"
   },
   "devDependencies": {

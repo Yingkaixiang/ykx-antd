@@ -3,18 +3,18 @@
  *
  */
 
-import * as React from 'react';
+import * as React from "react";
 
-interface InputProps {
+interface IInputProps {
   placeholder?: string;
 }
 
-class Input extends React.Component<InputProps, any> {
-  onKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
+class Input extends React.Component<IInputProps, any> {
+  public onKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
     console.log(e.keyCode);
   }
 
-  render() {
+  public render() {
     const { placeholder } = this.props;
     return (
       <div onKeyDown={this.onKeyPress.bind(this)}>
