@@ -10,15 +10,19 @@ interface IInputProps {
 }
 
 class Input extends React.Component<IInputProps, any> {
-  public onKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
-    console.log(e.keyCode);
+  constructor(props: IInputProps) {
+    super(props);
   }
 
-  public render() {
+  handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    console.log(e.keyCode);
+  };
+
+  render() {
     const { placeholder } = this.props;
     return (
-      <div onKeyDown={this.onKeyPress.bind(this)}>
-        <input placeholder={placeholder} />
+      <div>
+        <input placeholder={placeholder} onKeyDown={this.handleKeyDown} />
       </div>
     );
   }

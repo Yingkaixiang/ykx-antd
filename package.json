@@ -1,15 +1,14 @@
 {
   "name": "ykx-antd",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript学习和练习",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack",
     "start": "PORT=3000 ./node_modules/.bin/nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "应开翔",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
@@ -29,9 +28,11 @@
     "less-loader": "^4.1.0",
     "nodemon": "1.17.5",
     "open-browser-webpack-plugin": "0.0.5",
+    "prettier": "1.13.7",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.4.1",
+    "tslint-react": "3.6.0",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-middleware": "^3.1.3",

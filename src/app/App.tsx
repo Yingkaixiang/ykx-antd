@@ -4,48 +4,24 @@ import Button from "./components/button/";
 import Input from "./components/input/";
 import Radio from "./components/radio/";
 
+const root = document.getElementById("root");
+
 ReactDOM.render(
   <div>
-    <Button
-      style={{ margin: 8 }}
-      type="primary"
-      onClick={() => {
-        console.log(123);
-      }}
-    >
+    <Button style={{ margin: 8 }} type="primary">
       Primary
     </Button>
-    <Button
-      style={{ margin: 8 }}
-      type="primary"
-      ghost
-      onClick={() => {
-        console.log(123);
-      }}
-    >
+    <Button style={{ margin: 8 }} type="primary" ghost>
       Primary
     </Button>
-    <Button
-      style={{ margin: 8 }}
-      onClick={() => {
-        console.log(123);
-      }}
-    >
-      Default
-    </Button>
-    <Button
-      style={{ margin: 8 }}
-      disabled
-      onClick={() => {
-        console.log(123);
-      }}
-    >
+    <Button style={{ margin: 8 }}>Default</Button>
+    <Button style={{ margin: 8 }} disabled>
       Disabled
     </Button>
     <Radio>Radio</Radio>
     <Input />
   </div>,
-  document.getElementById("root"),
+  root,
 );
 
 declare let module: any;

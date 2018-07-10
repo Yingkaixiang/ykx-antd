@@ -1,6 +1,11 @@
 {
-  "extends": ["tslint:recommended"],
+  "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
-    "no-console": [false]
+    "member-access": false,
+    "no-console": [false],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "no-any": false,
+    "no-empty-interface": false,
+    "jsx-boolean-value": false
   }
 }

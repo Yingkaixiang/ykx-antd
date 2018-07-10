@@ -20,6 +20,7 @@ type ButtonProps = IBaseButtonProps &
 class Button extends React.Component<ButtonProps, any> {
   constructor(props: ButtonProps) {
     super(props);
+    this.onClick = this.onClick.bind(this);
   }
   public onClick() {
     const { onClick } = this.props;
@@ -47,11 +48,11 @@ class Button extends React.Component<ButtonProps, any> {
       <button
         className={buttonClass}
         style={style}
-        onClick={this.onClick.bind(this)}
+        onClick={this.onClick}
         disabled={disabled}
         type={htmlType || "button"}
       >
-        {loading ? "加载中..." : ""}
+        {loading ? "加载中... " : ""}
         {children || "button"}
       </button>
     );

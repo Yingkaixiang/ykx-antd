@@ -1,8 +1,13 @@
 module.exports = {
-  // 单引号
-  singleQuote: false,
-  // 每条语句结尾都添加逗号
-  trailingComma: 'all',
-  // jsx标签结尾的">"符号换行
+  trailingComma: "all",
   jsxBracketSameLine: false,
+  arrowParens: "always",
+  overrides: [
+    {
+      files: "*.less",
+      options: {
+        parser: "less",
+      },
+    },
+  ],
 };

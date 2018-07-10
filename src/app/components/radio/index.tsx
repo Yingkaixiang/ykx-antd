@@ -20,12 +20,12 @@ class Radio extends React.Component<IRadioProps, any> {
     };
   }
 
-  public check() {
+  check = () => {
     const { checked } = this.state;
     this.setState({
       checked: !checked,
     });
-  }
+  };
 
   public render() {
     const { checked } = this.state;
@@ -35,7 +35,7 @@ class Radio extends React.Component<IRadioProps, any> {
       "ykx-radio-inner-checked": checked,
     });
     return (
-      <div className="ykx-radio" onClick={this.check.bind(this)}>
+      <div className="ykx-radio" onClick={this.check}>
         <span className={className} />
         <span>{children || ""}</span>
       </div>
