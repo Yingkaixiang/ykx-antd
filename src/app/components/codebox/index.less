@@ -1,0 +1,35 @@
+@import "../../style/default.less";
+
+@border-color: #ebedf0;
+
+:global {
+  .code-box {
+    border: 1px solid @border-color;
+    border-radius: 2px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    color: #314659;
+
+    &-demo {
+      border-bottom: 1px solid @border-color;
+      padding: 42px 24px 50px;
+    }
+
+    &-meta {
+      position: relative;
+      padding: 18px 32px;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    &-title {
+      position: absolute;
+      top: -14px;
+      padding: 1px 8px;
+      margin-left: -8px;
+      background: #fff;
+      font-weight: 500;
+    }
+  }
+}
