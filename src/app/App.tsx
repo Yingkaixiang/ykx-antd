@@ -1,25 +1,20 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Button from "./components/button/";
-import Input from "./components/input/";
-import Radio from "./components/radio/";
+import Badge from "./components/badge/";
 
 const root = document.getElementById("root");
+const badgeStyle = {
+  background: "#eee",
+  borderRadius: 4,
+  height: 42,
+  width: 42,
+};
 
 ReactDOM.render(
   <div>
-    <Button style={{ margin: 8 }} type="primary">
-      Primary
-    </Button>
-    <Button style={{ margin: 8 }} type="primary" ghost>
-      Primary
-    </Button>
-    <Button style={{ margin: 8 }}>Default</Button>
-    <Button style={{ margin: 8 }} disabled>
-      Disabled
-    </Button>
-    <Radio>Radio</Radio>
-    <Input />
+    <Badge count={0}>
+      <div style={badgeStyle} />
+    </Badge>
   </div>,
   root,
 );

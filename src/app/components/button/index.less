@@ -1,6 +1,7 @@
 @import "../../style/default";
 
 @default-color: #d9d9d9;
+@primary-hover: rgba(24, 144, 255, 0.8);
 
 :global {
   .ykx-button {
@@ -19,6 +20,11 @@
       border-color: @primary-color;
       background-color: @primary-color;
       color: #ffffff;
+
+      &:hover {
+        border-color: @primary-hover;
+        background-color: @primary-hover;
+      }
 
       &-ghost {
         border-color: @primary-color;
