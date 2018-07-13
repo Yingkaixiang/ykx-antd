@@ -33,6 +33,14 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         loader: "ts-loader",
       },
+      // 解析字体文件
+      {
+        test: /\.(ttf|eot|woff|woff2|svg)$/,
+        loader: "file-loader",
+        options: {
+          name: "fonts/[name].[ext]",
+        },
+      },
       // 解析less语法，并插入css
       {
         test: /\.less$/,

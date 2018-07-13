@@ -21,6 +21,7 @@
       padding: 18px 32px;
       width: 100%;
       font-size: 14px;
+      box-sizing: border-box;
     }
 
     &-title {
@@ -30,6 +31,19 @@
       margin-left: -8px;
       background: #fff;
       font-weight: 500;
+    }
+
+    &-show {
+      position: absolute;
+      right: 16px;
+      bottom: 23px;
+    }
+
+    &-highlight {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 18px 32px;
+      border-top: 1px dashed @border-color;
     }
   }
 }
