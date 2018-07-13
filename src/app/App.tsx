@@ -10,7 +10,7 @@ ReactDOM.render(
   <div style={{ width: 500 }}>
     <Codebox
       title="基础"
-      desc="简单的徽章展示，当 count 为 0 时，默认不显示，但是可以使用 showZero 修改为显示。"
+      desc="简单的徽章展示，当 ```count``` 为 ```0``` 时，默认不显示，但是可以使用 ```showZero``` 修改为显示。"
       style={{ margin: 20 }}
     >
       <Icon type="back" style={{ color: "red" }} />

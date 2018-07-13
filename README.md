@@ -1,5 +1,7 @@
 # ykx-antd
 
+从零开始搭建 `antd`。
+
 ```
 yarn install
 yarn start
@@ -14,5 +16,3 @@ yarn start
 - [x] webpack-dev-middleware
 - [x] prettier
 - [x] tslint
-- [ ] mock
-- [ ] 组件测试

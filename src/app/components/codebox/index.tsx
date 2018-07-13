@@ -4,11 +4,12 @@ import * as React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs } from "react-syntax-highlighter/styles/hljs";
 import Icon from "../icon/";
+import Markdown from "../markdown/";
 import "./index.less";
 
 interface ICodeBoxProps {
   title: string;
-  desc: React.ReactElement<HTMLElement> | string;
+  desc: string;
   style?: object;
 }
 
@@ -24,14 +25,18 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
     this.setState({ showCode: !this.state.showCode });
   };
 
+  edit = () => {
+    window.open("https://github.com/Yingkaixiang/ykx-antd");
+  };
+
   render() {
     const { showCode } = this.state;
     const { title, children, desc, ...restProps } = this.props;
     const codeString = "(num) => num + 1";
 
-    function getA() {
+    function renderHighLight() {
       return (
-        <section className="code-box-highlight">
+        <section className="ykx-codebox-highlight">
           <SyntaxHighlighter language="javascript" style={vs}>
             {codeString}
           </SyntaxHighlighter>
@@ -39,18 +44,25 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
       );
     }
     return (
-      <section className="code-box" {...restProps}>
-        <section className="code-box-demo">{children}</section>
-        <section className="code-box-meta">
-          <div className="code-box-title">{title}</div>
-          {desc}
+      <section className="ykx-codebox" {...restProps}>
+        <section className="ykx-codebox-demo">{children}</section>
+        <section className="ykx-codebox-meta">
+          <div className="ykx-codebox-title">
+            {title}
+            <Icon
+              className="ykx-codebox-edit"
+              type="edit"
+              onClick={this.edit}
+            />
+          </div>
+          <Markdown source={desc} />
           <Icon
             onClick={this.handleShowCode}
-            className="code-box-show"
+            className="ykx-codebox-show"
             type={showCode ? "arrows-alt" : "shrink"}
           />
         </section>
-        {showCode ? getA() : null}
+        {showCode ? renderHighLight() : null}
       </section>
     );
   }
