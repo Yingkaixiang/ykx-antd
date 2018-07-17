@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom";
 import Badge from "./components/badge/";
 import Codebox from "./components/codebox/";
 import Icon from "./components/icon/";
+import Markdown from "./components/markdown/";
 
 const root = document.getElementById("root");
 
@@ -23,6 +24,15 @@ ReactDOM.render(
       <Badge>
         <div style={{ width: 40, height: 40, background: "#ccc" }} />
       </Badge>
+    </Codebox>
+    <Codebox
+      title="基础"
+      desc="可以在编辑器中使用所有的 ```Markdown``` 语法"
+      style={{ margin: 20 }}
+      language="markdown"
+      code="# Markdown 编辑器"
+    >
+      <Markdown source="# Markdown 编辑器" />
     </Codebox>
   </div>,
   root,

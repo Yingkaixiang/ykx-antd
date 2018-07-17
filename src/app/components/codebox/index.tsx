@@ -11,6 +11,8 @@ interface ICodeBoxProps {
   title: string;
   desc: string;
   style?: object;
+  language?: "javascript" | "markdown";
+  code?: string;
 }
 
 export default class Codebox extends React.Component<ICodeBoxProps, any> {
@@ -31,14 +33,20 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
 
   render() {
     const { showCode } = this.state;
-    const { title, children, desc, ...restProps } = this.props;
-    const codeString = "(num) => num + 1";
+    const {
+      title,
+      children,
+      desc,
+      code = "还没有可展示的代码",
+      language = "javascript",
+      ...restProps
+    } = this.props;
 
     function renderHighLight() {
       return (
         <section className="ykx-codebox-highlight">
-          <SyntaxHighlighter language="javascript" style={vs}>
-            {codeString}
+          <SyntaxHighlighter language={language} style={vs}>
+            {code}
           </SyntaxHighlighter>
         </section>
       );

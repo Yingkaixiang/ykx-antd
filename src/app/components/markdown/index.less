@@ -1,13 +1,22 @@
 @import "../../style/default.less";
 
 :global {
-  .ykx-markdown-code {
-    background-color: #f2f4f5;
-    padding: 0.2em 0.4em;
-    font-size: 0.9em;
-    border-radius: 3px;
-    border: 1px solid #eee;
-    display: inline-block;
-    font-weight: 500;
+  .ykx-markdown {
+    color: #0d1a26;
+
+    & h1 {
+      font-weight: 500;
+      font-size: 30px;
+    }
+
+    &-code {
+      background-color: #f2f4f5;
+      padding: 0.2em 0.4em;
+      font-size: 0.9em;
+      border-radius: 3px;
+      border: 1px solid #eee;
+      display: inline-block;
+      font-weight: 500;
+    }
   }
 }

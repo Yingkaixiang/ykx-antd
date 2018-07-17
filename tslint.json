@@ -6,6 +6,14 @@
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "no-any": false,
     "no-empty-interface": false,
-    "jsx-boolean-value": false
+    "jsx-boolean-value": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "ignore"
+        }
+      }
+    ]
   }
 }
