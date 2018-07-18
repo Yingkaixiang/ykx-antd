@@ -32,10 +32,10 @@ yarn start
 ```json
 {
   "compilerOptions": {
-    ...
+    // ...
     "baseUrl": "types",
     "typeRoots": ["types"]
-  },
+  }
 }
 ```
 
