@@ -11,7 +11,7 @@ interface ICodeBoxProps {
   title: string;
   desc: string;
   style?: object;
-  language?: "javascript" | "markdown";
+  language?: "javascript" | "markdown" | "jsx";
   code?: string;
 }
 
