@@ -29,7 +29,7 @@ yarn start
 
 在 `tsconfig.json` 下添加如下配置：
 
-```json
+```js
 {
   "compilerOptions": {
     // ...
