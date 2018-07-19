@@ -2,8 +2,7 @@ import * as React from "react";
 import Codebox from "../../components/codebox/";
 import Markdown from "../../components/markdown/";
 
-const markdownText = `
-# Markdown 编辑器
+const markdownText = `# Markdown 编辑器
 
 **粗体**
 `;

@@ -1,17 +1,16 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { HashRouter as Router, Link } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import "./App.less";
+import Menu from "./components/menu/";
 import Routes from "./router";
 
 function App() {
   return (
     <Router>
       <div className="ykx">
-        <div className="ykx-menu">
-          <Link to="/">Home</Link>
-          <Link to="/markdown">markdown</Link>
-          <Link to="/badge">badge</Link>
+        <div className="ykx-left">
+          <Menu />
         </div>
         <div className="ykx-main">
           <Routes />

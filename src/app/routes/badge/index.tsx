@@ -2,8 +2,7 @@ import * as React from "react";
 import Badge from "../../components/badge/";
 import Codebox from "../../components/codebox/";
 
-const code = `
-<Badge>
+const code = `<Badge>
   <div style={{ width: 40, height: 40, background: "#ccc" }} />
 </Badge>
 `;

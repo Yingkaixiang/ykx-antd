@@ -1,8 +1,8 @@
 // 代码演示
 
 import * as React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs } from "react-syntax-highlighter/styles/hljs";
+import SyntaxHighlighter from "react-syntax-highlighter/prism";
+import { coy, tomorrow } from "react-syntax-highlighter/styles/prism";
 import Icon from "../icon/";
 import Markdown from "../markdown/";
 import "./index.less";
@@ -11,7 +11,7 @@ interface ICodeBoxProps {
   title: string;
   desc: string;
   style?: object;
-  language?: "javascript" | "markdown" | "jsx";
+  language: "javascript" | "markdown" | "jsx";
   code?: string;
 }
 
@@ -38,19 +38,28 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
       children,
       desc,
       code = "还没有可展示的代码",
-      language = "javascript",
+      language,
       ...restProps
     } = this.props;
 
     function renderHighLight() {
+      const highlightMapping = {
+        javascript: coy,
+        jsx: coy,
+        markdown: tomorrow,
+      };
       return (
         <section className="ykx-codebox-highlight">
-          <SyntaxHighlighter language={language} style={vs}>
+          <SyntaxHighlighter
+            language={language}
+            style={highlightMapping[language]}
+          >
             {code}
           </SyntaxHighlighter>
         </section>
       );
     }
+
     return (
       <section className="ykx-codebox" {...restProps}>
         <section className="ykx-codebox-demo">{children}</section>
