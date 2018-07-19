@@ -4,32 +4,32 @@
 
 :global {
   .ykx-codebox {
-    border: 1px solid @border-color;
-    border-radius: 2px;
+    position: relative;
     display: inline-block;
     width: 100%;
-    position: relative;
+    border: 1px solid @border-color;
+    border-radius: 2px;
     color: #314659;
 
     &-demo {
-      border-bottom: 1px solid @border-color;
       padding: 42px 24px 50px;
+      border-bottom: 1px solid @border-color;
     }
 
     &-meta {
       position: relative;
+      box-sizing: border-box;
       padding: 18px 32px;
       width: 100%;
       font-size: 14px;
-      box-sizing: border-box;
     }
 
     &-title {
       position: absolute;
       top: -14px;
-      padding: 1px 8px;
       margin-left: -8px;
-      background: #fff;
+      padding: 1px 8px;
+      background: #ffffff;
       font-weight: 500;
     }
 
@@ -49,9 +49,10 @@
 
     &-highlight {
       box-sizing: border-box;
-      width: 100%;
       padding: 18px 32px;
+      width: 100%;
       border-top: 1px dashed @border-color;
+      font-size: 14px;
     }
   }
 }

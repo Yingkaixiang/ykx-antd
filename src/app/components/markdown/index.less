@@ -1,12 +1,28 @@
 @import "../../style/default.less";
 
+.h() {
+  color: #0d1a26;
+  font-weight: 500;
+  margin: 8px 0 20px 0;
+}
+
 :global {
   .ykx-markdown {
-    color: #0d1a26;
+    color: #314659;
+    font-size: 14px;
 
     & h1 {
-      font-weight: 500;
+      .h();
       font-size: 30px;
+    }
+
+    & h2 {
+      .h();
+      font-size: 24px;
+    }
+
+    & p {
+      margin: 1em 0;
     }
 
     & code {
