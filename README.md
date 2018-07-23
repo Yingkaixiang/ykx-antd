@@ -1,6 +1,6 @@
 # ykx-antd
 
-从零开始搭建 `antd`。
+从零开始搭建 `antd`，没有使用任何的 demo 或脚手架。
 
 ```
 yarn install
@@ -44,3 +44,7 @@ yarn start
 将你的声明文件按照官方格式提交到 `DefinitelyTyped`。
 
 [官方文档](https://github.com/DefinitelyTyped/DefinitelyTyped)
+
+## 资料参考
+
+- [TypeScript Handbook（中文版）](https://legacy.gitbook.com/book/zhongsp/typescript-handbook)

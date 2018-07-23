@@ -31,7 +31,7 @@ module.exports = {
       // 解析ts语法
       {
         test: /\.(ts|tsx)$/,
-        loader: "ts-loader",
+        loader: "awesome-typescript-loader",
       },
       // 解析字体文件
       {

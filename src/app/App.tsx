@@ -5,33 +5,12 @@ import "./App.less";
 import Menu from "./components/menu/";
 import Routes from "./router";
 
-const routes = [
-  {
-    isSelected: false,
-    title: "Home",
-    titleChs: "首页",
-    url: "/",
-  },
-  {
-    isSelected: false,
-    title: "Markdown",
-    titleChs: "编辑器",
-    url: "/markdown",
-  },
-  {
-    isSelected: false,
-    title: "Badge",
-    titleChs: "徽章",
-    url: "/badge",
-  },
-];
-
 function App() {
   return (
     <Router>
       <div className="ykx">
         <div className="ykx-left">
-          <Menu routes={routes} />
+          <Menu />
         </div>
         <div className="ykx-main">
           <Routes />

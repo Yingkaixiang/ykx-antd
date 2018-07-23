@@ -2,24 +2,36 @@ import classNames from "classnames";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import "./index.less";
+import menu from "./menu";
 
-interface IMenu {
-  routes?: any[];
+// TypeScript里的类型兼容性是基于结构子类型的
+// 所以在检查赋值或是函数参数时
+// 只要满足不缺少目标类型的属性就可以，多余的属性不会引发错误
+interface IRoutes {
+  title: string;
+  titleChs: string;
+  url: string;
+  isSelected?: boolean;
 }
 
-export default class Menu extends React.Component<IMenu, any> {
-  constructor(props: IMenu) {
+export default class Menu extends React.Component<any, any> {
+  constructor(props: any) {
     super(props);
     this.state = {
-      routes: this.props.routes,
+      routes: this.initRoutes(menu),
     };
   }
 
+  initRoutes = (arr: IRoutes[]) => {
+    return arr.map((item) => {
+      item.isSelected = false;
+      return item;
+    });
+  };
+
   navigateTo = (i: number): void => {
     const { routes } = this.state;
-    const list = routes.map((item: any, index: number) => {
-      console.log(i);
-      console.log(index);
+    const list = routes.map((item: IRoutes, index: number) => {
       if (index === i) {
         item.isSelected = true;
       } else {
@@ -27,7 +39,6 @@ export default class Menu extends React.Component<IMenu, any> {
       }
       return item;
     });
-    console.dir(list);
     this.setState({ routes: list });
   };
 
@@ -39,15 +50,14 @@ export default class Menu extends React.Component<IMenu, any> {
         "ykx-menu-item-selected": item.isSelected,
       });
       return (
-        <li
-          className={menuItemCls}
-          key={index}
-          onClick={this.navigateTo.bind(this, index)}
-        >
-          <Link to={item.url}>
+        <Link to={item.url} key={index}>
+          <li
+            className={menuItemCls}
+            onClick={this.navigateTo.bind(this, index)}
+          >
             {item.title} <span className="ykx-chinese">{item.titleChs}</span>
-          </Link>
-        </li>
+          </li>
+        </Link>
       );
     });
   };
