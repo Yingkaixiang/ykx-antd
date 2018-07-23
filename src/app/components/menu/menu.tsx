@@ -6,13 +6,18 @@ export default [
     url: "/",
   },
   {
+    title: "Badge",
+    titleChs: "徽章",
+    url: "/badge",
+  },
+  {
     title: "Markdown",
     titleChs: "编辑器",
     url: "/markdown",
   },
   {
-    title: "Badge",
-    titleChs: "徽章",
-    url: "/badge",
+    title: "Pagination",
+    titleChs: "分页",
+    url: "/pagination",
   },
 ];

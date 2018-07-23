@@ -1,0 +1,38 @@
+@import "../../style/default.less";
+
+:global {
+  .ykx-pagination {
+    &-item {
+      display: inline-block;
+      margin-right: 8px;
+      min-width: 32px;
+      height: 32px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: rgba(0, 0, 0, 0.65);
+      vertical-align: middle;
+      text-align: center;
+      line-height: 32px;
+      cursor: pointer;
+      font-family: Arial;
+      font-size: 14px;
+
+      &:hover {
+        border-color: @primary-color;
+        font-weight: 500;
+        color: @primary-color;
+      }
+
+      &-active {
+        border-color: @primary-color;
+        font-weight: 500;
+        color: @primary-color;
+      }
+
+      &-disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
