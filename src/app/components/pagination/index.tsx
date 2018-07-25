@@ -71,7 +71,6 @@ export default class Pagination extends React.Component<IPagination, any> {
     }
     return null;
   }
-
   render() {
     return <ul>{this.renderPages()}</ul>;
   }
