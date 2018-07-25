@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "start": "PORT=3000 ./node_modules/.bin/nodemon server.js"
+    "start": "PORT=3000 ./node_modules/.bin/nodemon server.js",
+    "prettier": "./node_modules/.bin/prettier --find-config-path --write -l 'src/**/*.{ts,tsx,less,css}'"
   },
   "keywords": [],
   "author": "应开翔",

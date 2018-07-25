@@ -1,21 +1,41 @@
 # ykx-antd
 
-从零开始搭建 `antd`，没有使用任何的 demo 或脚手架。
+深入学习 `React` `Webpack` `Typescript`。
+
+从零开始搭建 [antd](https://ant.design/index-cn)，项目构建不使用任何的现成 demo 或脚手架。
 
 ```
 yarn install
 yarn start
 ```
 
-## 功能
+## 技术栈
 
-- [x] TypeScript
-- [x] Less
 - [x] CSS Modules
+- [x] Less
+- [x] Prettier
+- [x] TypeScript
+- [x] tslint
 - [x] Webpack
 - [x] webpack-dev-middleware
-- [x] prettier
-- [x] tslint
+
+## Prettier
+
+如果你使用 `vscode` 则可以直接安装 [Prettier 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)。插件会读取项目中的 `prettier.config.js` 配置进行格式化。
+
+你可以设置编辑器保存时自动格式化：
+
+```json
+{
+  "editor.formatOnSave": true
+}
+```
+
+也可以在命令行执行以下命令进行统一的格式化：
+
+```bash
+npm run prettier
+```
 
 ## 声明文件
 
