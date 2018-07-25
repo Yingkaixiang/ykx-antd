@@ -1,11 +1,165 @@
 {
   "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
+    //
+    // TypeScript 相关的检查
+    // 这些规则是与 TypeScript 特性相关的检查
+    //
+    // 定义函数时如果用到了覆写，则必须将覆写的函数写到一起
+    "adjacent-overload-signatures": true,
+    // 禁用指定类型
+    // @off 用于限制某个具体的类型不能使用
+    "ban-types": false,
+    // 必须指定类的成员的可访问性
+    // @off 太严格了
     "member-access": false,
+    // 指定类成员的排序规则
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    // 禁止使用 any
+    // @off 太严格了
+    "no-any": false,
+    // 禁止定义接口空的接口
+    // @off 没必要限制
+    "no-empty-interface": false,
+    // 禁止导入立即执行的模块？
+    // @off 太严格了
+    "no-import-side-effect": false,
+    // 禁止给一个初始化时即可自动推论出类型（number, string, boolean）的变量显式的指定类型
+    // @off 没必要限制
+    "no-inferrable-types": false,
+    // 禁止使用 module 来定义命名空间？
+    // module 是已废弃的关键字
+    "no-internal-module": true,
+    // 禁止使用魔法数字
+    // js的浮点数会出现精度问题
+    // @off 没必要限制
+    "no-magic-numbers": false,
+    // 禁止使用 namespace 来定义命名空间
+    // 使用 es6 引入外部模块，才是更加标准的方式
+    "no-namespace": true,
+    // 禁止使用 non-null 断言
+    // non-null 断言是已废弃的操作符
+    "no-non-null-assertion": true,
+    // 禁止对函数的参数重新赋值
+    "no-parameter-reassignment": true,
+    // 禁止使用三斜杠引入类型定义文件
+    "no-reference": true,
+    // 禁止无用的类型断言？
+    "no-unnecessary-type-assertion": true,
+    // 禁止使用 var b = require('b'); 来引入模块
+    // @off 有时需要动态引入，还是需要用 require
+    "no-var-requires": false,
+    // 必须使用箭头函数，除非是单独的函数声明或是命名函数
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
+    // 必须使用 for of 循环替代 for 循环
+    // @off for of 没有 for 直观
+    "prefer-for-of": false,
+    // async 函数的返回值必须是 promise
+    // @off 有时 async 函数在某个分支是同步的，不需要返回 promise
+    "promise-function-async": false,
+    // 函数、变量等必须要有类型定义
+    // @off 太严格了
+    "typedef": false,
+    // 类型定义的冒号前面必须没有空格，后面必须有一个空格
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ],
+    // 函数覆写时，若能通过联合类型将两个函数的类型声明合为一个，则使用联合类型而不是两个函数声明
+    // @off 太严格了
+    "unified-signatures": false,
+    //
+    // 功能性检查
+    // 这些规则可以找出可能的错误，或者是会产生 bug 的编码习惯
+    //
+    // await 必须接受 promise
+    // @off await 接受非 promise 也是可以的，会立即 resolve 变为同步执行
+    "await-promise": false,
+    // 禁止使用逗号操作符
+    "ban-comma-operator": true,
+    // 禁用指定的函数或全局方法
+    // @off 用于限制某个具体的函数不能使用
+    "ban": false,
+    // if 后面必须有 {，除非是单行 if
+    "curly": [true, "ignore-same-line"],
+    // for in 内部必须有 hasOwnProperty
+    "forin": true,
+    // 禁用指定的模块
+    // @off 用于限制某个具体的模块不能使用
+    "import-blacklist": false,
+    // 只允许在 do for while switch 中使用 label
+    // @off 在任何情况都不应该使用 label
+    "label-position": false,
+    // 禁止使用 arguments.callee
+    "no-arg": true,
+    // 禁止使用位运算
+    // @off 位运算很常见
+    "no-bitwise": false,
+    // 禁止在分支条件判断中有赋值操作
+    "no-conditional-assignment": true,
+    // 禁止使用 new 来生成 String, Number 或 Boolean
+    "no-construct": true,
+    // 禁止使用 debugger
+    "no-debugger": true,
+    // 禁止 super 在一个构造函数中出现两次
+    "no-duplicate-super": true,
+    // 禁止在 switch 语句中出现重复测试表达式的 case
+    "no-duplicate-switch-case": true,
+    // 禁止出现重复的变量定义或函数参数名
+    "no-duplicate-variable": [true, "check-parameters"],
+    // 禁止 delete 动态的值
+    // @off 没必要限制
+    "no-dynamic-delete": false,
+    // 禁止出现空代码块，允许 catch 是空代码块
+    "no-empty": [true, "allow-empty-catch"],
+    // 禁止使用 eval
+    "no-eval": true,
+    // 函数返回值为 promise 时，必须被处理
+    // @off 太严格了
+    "no-floating-promises": false,
+    // 禁止对 array 使用 for in 循环
+    "no-for-in-array": true,
+    // 禁止引入 package.json 中不存在的模块
+    // @off 没必要限制
+    "no-implicit-dependencies": false,
+    // 禁止推论出的类型是空对象类型
+    // @off 没必要限制
+    "no-inferred-empty-object-type": false,
+    // 禁止在非模版字符串中出现 ${}
+    "no-invalid-template-strings": true,
+    // 禁止在类外面使用 this
+    // @off this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
+    "no-invalid-this": false,
+    // 禁止在接口中定义 constructor，或在类中定义 new
+    // @off 没必要限制
+    "no-misused-new": false,
+    // 禁止使用 null
+    // @off 没必要限制
+    "no-null-keyword": false,
     "no-console": [false],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "no-any": false,
-    "no-empty-interface": false,
     "jsx-boolean-value": false,
     "trailing-comma": [
       true,
