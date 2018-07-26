@@ -4948,3 +4948,7 @@ yargs@^11.1.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
+
+ykx-tslint@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ykx-tslint/-/ykx-tslint-1.0.1.tgz#44d6bf22f454111853a9c4995761a795ab9440fe"
