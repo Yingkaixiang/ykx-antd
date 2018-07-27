@@ -17,6 +17,7 @@
       cursor: pointer;
       font-family: Arial;
       font-size: 14px;
+      user-select: none;
 
       &:hover {
         border-color: @primary-color;
@@ -32,6 +33,17 @@
 
       &-disabled {
         cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+
+        & > .ykx-icon {
+          cursor: not-allowed;
+        }
+
+        &:hover {
+          border-color: #d9d9d9;
+          color: rgba(0, 0, 0, 0.25);
+        }
       }
     }
   }

@@ -1,77 +1,131 @@
+// 分页
+
 import classNames from "classnames";
 import * as React from "react";
 import Icon from "../icon/";
 import "./index.less";
 
-interface IPagination {
-  current?: number;
+export interface IPagination {
   defaultCurrent?: number;
   defaultPageSize?: number;
-  hideOnSinglePage?: boolean;
-  pageSize?: number;
   total?: number;
 }
 
-interface IPages {
-  page: number;
-  isSelected: boolean;
-}
-
 export default class Pagination extends React.Component<IPagination, any> {
+  static defaultProps = {
+    defaultCurrent: 1,
+    defaultPageSize: 10,
+    total: 0,
+  };
+
   constructor(props: IPagination) {
     super(props);
+    const { defaultCurrent, defaultPageSize } = props;
     this.state = {
-      pages: this.initPageData(),
+      current: defaultCurrent,
+      pageSize: defaultPageSize,
     };
   }
 
-  initPageData = (): IPages[] => {
-    const { total = 0, pageSize = 10, defaultCurrent = 1 } = this.props;
-    const length = Math.ceil(total / pageSize);
-    const arr = [];
-    for (let i = 0; i < length; i += 1) {
-      const data: IPages = {
-        isSelected: i + 1 === defaultCurrent,
-        page: i + 1,
-      };
-      arr.push(data);
+  calculatePage = (): number => {
+    const { pageSize } = this.state;
+    const { total } = this.props;
+    if (total) {
+      return Math.ceil(total / pageSize);
     }
-    return arr;
+    return 0;
   };
 
-  renderPages() {
-    const { pages } = this.state;
-    if (pages) {
-      const arr = pages.map((item: IPages, index: number) => {
-        const itemCls = classNames({
+  handlePageNumberClick = (current: number) => {
+    this.setState({ current });
+  };
+
+  handlePrevClick = (current: number) => {
+    if (current > 1) {
+      this.setState({
+        current: current - 1,
+      });
+    }
+  };
+
+  handleNextClick = (current: number, total: number) => {
+    if (current < total) {
+      this.setState({
+        current: current + 1,
+      });
+    }
+  };
+
+  renderPageNumbers = () => {
+    const { total } = this.props;
+    const { current } = this.state;
+    if (!total) {
+      return [];
+    } else {
+      const arr = [];
+      const length = this.calculatePage();
+      for (let i = 0; i < length; i += 1) {
+        const page = i + 1;
+        const pageNumberCls = classNames({
           "ykx-pagination-item": true,
-          "ykx-pagination-item-active": item.isSelected,
+          "ykx-pagination-item-active": page === current,
         });
-        return (
-          <li className={itemCls} key={index}>
-            {item.page}
-          </li>
+        arr.push(
+          <li
+            className={pageNumberCls}
+            key={i}
+            onClick={this.handlePageNumberClick.bind(this, page)}
+          >
+            {page}
+          </li>,
         );
-      });
-      const prevCls = classNames({
-        "ykx-pagination-item": true,
-        "ykx-pagination-item-disabled": true,
-      });
-      arr.push(
-        <li className="ykx-pagination-item">
-          <Icon type="right" />
-        </li>,
-      );
-      arr.unshift(
-        <li className={prevCls}>
-          <Icon type="left" />
-        </li>,
-      );
+      }
       return arr;
     }
-    return null;
+  };
+
+  // 上一页
+  renderPrev() {
+    const { current } = this.state;
+    const prevCls = classNames({
+      "ykx-pagination-item": true,
+      "ykx-pagination-item-disabled": current === 1,
+    });
+    return (
+      <li
+        className={prevCls}
+        onClick={this.handlePrevClick.bind(this, current)}
+      >
+        <Icon type="left" />
+      </li>
+    );
   }
+
+  // 下一页
+  renderNext() {
+    const { current } = this.state;
+    const lastPage = this.calculatePage();
+    const nextCls = classNames({
+      "ykx-pagination-item": true,
+      "ykx-pagination-item-disabled": current === lastPage,
+    });
+    return (
+      <li
+        className={nextCls}
+        onClick={this.handleNextClick.bind(this, current, lastPage)}
+      >
+        <Icon type="right" />
+      </li>
+    );
+  }
+
   render() {
-    return <ul>{this.renderPages()}</ul>;
+    return (
+      <ul>
+        {this.renderPrev()}
+        {this.renderPageNumbers()}
+        {this.renderNext()}
+      </ul>
+    );
   }
 }
