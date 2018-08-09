@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default function request() {
-  return axios("/markdown");
+  return axios("/api/markdown/icon");
 }

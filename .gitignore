@@ -4,5 +4,8 @@ node_modules
 # MacOS 排序文件
 .DS_Store
 
-# 打包代码
+# 前端打包代码
 dist
+
+# 后端打包代码
+build

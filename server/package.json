@@ -1,0 +1,35 @@
+{
+  "name": "ykx-antd-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "./node_modules/.bin/tsc",
+    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon ./build/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "^2.0.45",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-logger": "^3.1.0",
+    "@types/koa-router": "^7.0.27",
+    "@types/mockjs": "^1.0.0",
+    "axios": "^0.18.0",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "mockjs": "^1.0.1-beta3"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "nodemon": "^1.17.3",
+    "typescript": "^2.8.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
