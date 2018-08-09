@@ -1,7 +1,7 @@
+import Icon from "components/icon";
+import Markdown from "components/markdown";
 import * as React from "react";
-import Icon from "../../components/icon";
-import Markdown from "../../components/markdown";
-import request from "../../utils/request";
+import request from "utils/request";
 import "./index.less";
 import list from "./list";
 
