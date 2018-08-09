@@ -1,7 +1,7 @@
 // markdown
 
-import * as mmd from "micromarkdown";
 import * as React from "react";
+import * as ReactMarkdown from "react-markdown";
 import "./index.less";
 
 interface IMarkdown {
@@ -11,11 +11,6 @@ interface IMarkdown {
 export default class Markdown extends React.Component<IMarkdown, any> {
   render() {
     const { source } = this.props;
-    return (
-      <span
-        className="ykx-markdown"
-        dangerouslySetInnerHTML={{ __html: mmd.parse(source) }}
-      />
-    );
+    return <ReactMarkdown className="ykx-markdown" source={source} />;
   }
 }

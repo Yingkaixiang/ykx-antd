@@ -1,0 +1,30 @@
+@import "../../style/default.less";
+
+:global {
+  .ykx-icon-page {
+    width: 100%;
+
+    &-img {
+      font-size: 24px;
+    }
+
+    & > ul > li {
+      float: left;
+      width: 100% / 6;
+      text-align: center;
+      list-style: none;
+      cursor: pointer;
+      height: 100px;
+      color: #555;
+      margin: 3px 0;
+      border-radius: 4px;
+      overflow: hidden;
+      padding: 10px 0 0;
+
+      &:hover {
+        background-color: @primary-color;
+        color: #fff;
+      }
+    }
+  }
+}

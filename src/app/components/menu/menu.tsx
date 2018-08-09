@@ -6,6 +6,11 @@ export default [
     url: "/",
   },
   {
+    title: "Icon",
+    titleChs: "图标",
+    url: "/icon",
+  },
+  {
     title: "Badge",
     titleChs: "徽章",
     url: "/badge",

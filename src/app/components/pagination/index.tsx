@@ -64,19 +64,38 @@ export default class Pagination extends React.Component<IPagination, any> {
     } else {
       const arr = [];
       const length = this.calculatePage();
-      for (let i = 0; i < length; i += 1) {
-        const page = i + 1;
+      if (length <= 10) {
+        for (let i = 0; i < length; i += 1) {
+          const page = i + 1;
+          const pageNumberCls = classNames({
+            "ykx-pagination-item": true,
+            "ykx-pagination-item-active": page === current,
+          });
+          arr.push(
+            <li
+              className={pageNumberCls}
+              key={i}
+              onClick={this.handlePageNumberClick.bind(this, page)}
+            >
+              {page}
+            </li>,
+          );
+        }
+      } else {
         const pageNumberCls = classNames({
           "ykx-pagination-item": true,
-          "ykx-pagination-item-active": page === current,
+          "ykx-pagination-item-active": false,
         });
         arr.push(
-          <li
-            className={pageNumberCls}
-            key={i}
-            onClick={this.handlePageNumberClick.bind(this, page)}
-          >
-            {page}
+          <li className={pageNumberCls} key={1}>
+            1
+          </li>,
+        );
+        arr.push(<Icon type="ellipsis" />);
+        arr.push(<Icon type="ellipsis" />);
+        arr.push(
+          <li className={pageNumberCls} key={length}>
+            {length}
           </li>,
         );
       }

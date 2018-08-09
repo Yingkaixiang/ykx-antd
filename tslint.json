@@ -1,3 +1,6 @@
 {
-  "extends": ["ykx-tslint", "tslint-react"]
+  "extends": ["ykx-tslint", "tslint-react"],
+  "rules": {
+    "jsx-boolean-value": ["never"]
+  }
 }
