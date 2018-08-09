@@ -6,6 +6,3 @@ node_modules
 
 # 打包代码
 dist
-
-# VSCode 配置
-.vscode

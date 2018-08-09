@@ -5,6 +5,7 @@
 从零开始搭建 [antd](https://ant.design/index-cn)，项目构建不使用任何的现成 demo 或脚手架。
 
 ```
+cd app
 yarn install
 yarn start
 ```
