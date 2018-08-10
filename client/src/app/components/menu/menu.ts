@@ -25,4 +25,9 @@ export default [
     titleChs: "分页",
     url: "/pagination",
   },
+  {
+    title: "Upload",
+    titleChs: "上传",
+    url: "/upload",
+  },
 ];

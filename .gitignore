@@ -9,3 +9,6 @@ dist
 
 # 后端打包代码
 build
+
+# 上传文件
+uploads

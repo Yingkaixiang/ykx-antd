@@ -16,13 +16,17 @@
     "@types/koa-router": "^7.0.27",
     "@types/mockjs": "^1.0.0",
     "axios": "^0.18.0",
+    "busboy": "^0.2.14",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-logger": "^3.2.0",
+    "koa-multer": "^1.0.2",
     "koa-router": "^7.4.0",
     "mockjs": "^1.0.1-beta3"
   },
   "devDependencies": {
+    "@types/busboy": "^0.2.3",
+    "@types/koa-multer": "^1.0.0",
     "cz-conventional-changelog": "^2.1.0",
     "nodemon": "^1.17.3",
     "typescript": "^2.8.1"

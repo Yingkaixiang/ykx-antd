@@ -1,6 +1,6 @@
 const path = require("path");
 const express = require("express");
-const request = require("superagent");
+const proxy = require("http-proxy-middleware");
 const webpack = require("webpack");
 const config = require("./webpack.config.js");
 const webpackDevMiddleware = require("webpack-dev-middleware");
@@ -22,13 +22,15 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
-app.get("/api/*", (req, res) => {
-  const path = req.url.replace("/api", "");
-  request.get(`http://127.0.0.1:8888${path}`).end((err, data) => {
-    res.set("Content-Type", "application/json");
-    res.send(data.text);
-  });
-});
+app.all(
+  "/api/*",
+  proxy({
+    target: "http://127.0.0.1:8888",
+    pathRewrite: (path) => {
+      return path.replace("/api", "");
+    },
+  }),
+);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
