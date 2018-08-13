@@ -65,7 +65,7 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
         <section className="ykx-codebox-demo">{children}</section>
         <section className="ykx-codebox-meta">
           <div className="ykx-codebox-title">
-            {title}
+            <span>{title}</span>
             <Icon
               className="ykx-codebox-edit"
               type="edit"
