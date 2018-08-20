@@ -14,7 +14,7 @@ export default class IconDoc extends React.Component<{}, any> {
   }
 
   componentWillMount() {
-    request().then((data) => {
+    request("/api/markdown/icon").then((data) => {
       this.setState({
         markdown: data.data,
       });
