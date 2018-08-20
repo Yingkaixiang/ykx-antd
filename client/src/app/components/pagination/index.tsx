@@ -112,13 +112,15 @@ export default class Pagination extends React.Component<IPagination, any> {
             1
           </li>,
         );
-        arr.push(
-          <Icon
-            className="ykx-pagination-ellipsis"
-            type="ellipsis"
-            onClick={this.prevFivePage}
-          />,
-        );
+        if (current - 1 >= 4) {
+          arr.push(
+            <Icon
+              className="ykx-pagination-ellipsis"
+              type="ellipsis"
+              onClick={this.prevFivePage}
+            />,
+          );
+        }
         const offset = 2;
         for (let i = current - offset; i < current + offset + 1; i += 1) {
           const pageNumberCls = this.getCurrentPageStyle(current, i);
@@ -128,13 +130,15 @@ export default class Pagination extends React.Component<IPagination, any> {
             </li>,
           );
         }
-        arr.push(
-          <Icon
-            className="ykx-pagination-ellipsis"
-            type="ellipsis"
-            onClick={this.prevFivePage}
-          />,
-        );
+        if (this.getTotalPage() - current >= 4) {
+          arr.push(
+            <Icon
+              className="ykx-pagination-ellipsis"
+              type="ellipsis"
+              onClick={this.prevFivePage}
+            />,
+          );
+        }
         arr.push(
           <li
             className={this.getCurrentPageStyle(current, length)}
@@ -189,7 +193,10 @@ export default class Pagination extends React.Component<IPagination, any> {
     const { showTotal } = this.props;
     if (showTotal) {
       const length = this.getTotalPage();
-      const text = showTotal(length, [current, current + pageSize - 1]);
+      const text = showTotal(length, [
+        (current - 1) * pageSize + 1,
+        current * pageSize,
+      ]);
       return <span className="ykx-pagination-total-text">{text}</span>;
     } else {
       return null;
