@@ -12,3 +12,6 @@ build
 
 # 上传文件
 uploads
+
+# 测试
+client/test/__snapshots__
