@@ -1,9 +1,10 @@
 import * as React from "react";
 
-import Codebox from "../../components/codebox/";
-import Markdown from "../../components/markdown";
-import Pagination from "../../components/pagination/";
-import request from "../../utils/request";
+import Codebox from "components/codebox/";
+import Markdown from "components/markdown";
+import Pagination from "components/pagination/";
+
+import request from "utils/request";
 
 const code = `<Pagination
   defaultCurrent={1}

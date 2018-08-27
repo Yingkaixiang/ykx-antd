@@ -1,8 +1,12 @@
 import * as React from "react";
-import Icon from "../../components/icon";
-import Markdown from "../../components/markdown";
-import request from "../../utils/request";
+
+import Icon from "components/icon";
+import Markdown from "components/markdown";
+
+import request from "utils/request";
+
 import "./index.less";
+
 import list from "./list";
 
 export default class IconDoc extends React.Component<{}, any> {

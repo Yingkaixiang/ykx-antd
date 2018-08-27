@@ -14,6 +14,10 @@
     "sourceMap": true,
     "target": "es5",
     "baseUrl": "./src/app",
+    "paths": {
+      "components/*": ["components/*"],
+      "utils/*": ["utils/*"]
+    },
     "typeRoots": ["types"]
   },
   "include": ["./src/**/**/*"],

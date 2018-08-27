@@ -25,6 +25,11 @@ module.exports = {
     // 自动解析文件扩展名
     // 在代码引入时不需要添加扩展名
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    // 相对路径转绝对路径
+    alias: {
+      components: path.join(__dirname, "src/app/components"),
+      utils: path.join(__dirname, "src/app/utils"),
+    },
   },
   module: {
     rules: [

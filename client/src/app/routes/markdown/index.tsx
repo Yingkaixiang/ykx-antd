@@ -1,6 +1,7 @@
 import * as React from "react";
-import Codebox from "../../components/codebox/";
-import Markdown from "../../components/markdown/";
+
+import Codebox from "components/codebox/";
+import Markdown from "components/markdown/";
 
 const markdownText = `# Markdown 编辑器
 
