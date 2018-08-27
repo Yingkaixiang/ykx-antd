@@ -1,13 +1,35 @@
 # ykx-antd
 
-深入学习 `React` `Webpack` `Typescript`。
+## 简介
 
-从零开始搭建 [antd](https://ant.design/index-cn)，项目构建不使用任何的现成 demo 或脚手架。
+深入学习 `React` `Webpack` `Typescript`，以及相关的技术栈。
 
-```
-cd app
+从零开始搭建 [antd](https://ant.design/index-cn)，项目搭建不使用任何的现成 demo 或脚手架。
+
+## 如何使用
+
+```bash
+##### 前端
+cd client
+# 安装依赖
 yarn install
+# 启动项目
 yarn start
+# 格式化代码
+yarn prettier
+# 测试
+yarn test
+# 构建
+yarn build
+
+##### 后端
+cd server
+# 安装依赖
+yarn install
+# 编译ts
+tsc
+# 启动服务
+yarn dev
 ```
 
 ## 技术栈
@@ -19,6 +41,11 @@ yarn start
 - [x] tslint
 - [x] Webpack
 - [x] webpack-dev-middleware
+- [x] Jest
+- [x] Express
+- [x] Koa2
+- [x] NodeJS
+- [x] Babel
 
 ## Prettier
 
@@ -35,7 +62,7 @@ yarn start
 也可以在命令行执行以下命令进行统一的格式化：
 
 ```bash
-npm run prettier
+yarn prettier
 ```
 
 ## 声明文件
