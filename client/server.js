@@ -9,18 +9,14 @@ const webpackHotMiddleware = require("webpack-hot-middleware");
 const app = express();
 const compiler = webpack(config);
 
-app.use(
-  webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: "/",
-    stats: { colors: true },
-  }),
-);
-app.use(webpackHotMiddleware(compiler));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+const devMiddle = webpackDevMiddleware(compiler, {
+  noInfo: true,
+  publicPath: "/",
+  stats: { colors: true },
 });
+
+app.use(devMiddle);
+app.use(webpackHotMiddleware(compiler));
 
 app.all(
   "/api/*",

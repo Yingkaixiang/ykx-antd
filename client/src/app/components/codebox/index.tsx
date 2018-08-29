@@ -1,34 +1,38 @@
-// 代码演示
+/**
+ * 代码演示
+ * v0.0.2
+ */
 
 import * as React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { coy, tomorrow } from "react-syntax-highlighter/styles/prism";
-import Icon from "../icon/";
-import Markdown from "../markdown/";
+
+import Icon from "components/icon/";
+import Markdown from "components/markdown/";
+
 import "./index.less";
 
-interface ICodeBoxProps {
-  title: string;
-  desc: string;
-  style?: object;
-  language: "javascript" | "markdown" | "jsx";
+interface ICodeboxProps extends React.HTMLAttributes<{}> {
   code?: string;
+  desc: string;
+  language: "javascript" | "markdown" | "jsx";
+  title: string;
 }
 
-export default class Codebox extends React.Component<ICodeBoxProps, any> {
-  constructor(props: ICodeBoxProps) {
+export default class Codebox extends React.Component<ICodeboxProps, any> {
+  constructor(props: ICodeboxProps) {
     super(props);
     this.state = {
       showCode: false,
     };
   }
 
-  handleShowCode = () => {
+  handleShowCode = (): void => {
     this.setState({ showCode: !this.state.showCode });
   };
 
-  edit = () => {
-    window.open("https://github.com/Yingkaixiang/ykx-antd");
+  edit = (id: string): void => {
+    window.location.hash = `#${id}`;
   };
 
   render() {
@@ -42,7 +46,7 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
       ...restProps
     } = this.props;
 
-    function renderHighLight() {
+    const renderHighLight = () => {
       const highlightMapping = {
         javascript: coy,
         jsx: coy,
@@ -58,7 +62,7 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
           </SyntaxHighlighter>
         </section>
       );
-    }
+    };
 
     return (
       <section className="ykx-codebox" {...restProps}>
@@ -69,7 +73,7 @@ export default class Codebox extends React.Component<ICodeBoxProps, any> {
             <Icon
               className="ykx-codebox-edit"
               type="edit"
-              onClick={this.edit}
+              onClick={this.edit.bind(this, this.props.id)}
             />
           </div>
           <Markdown source={desc} />

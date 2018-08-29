@@ -48,7 +48,7 @@ module.exports = {
       },
       // 解析less语法，并插入css
       {
-        test: /\.less$/,
+        test: /\.(less|css)$/,
         use: [
           {
             // 将css以<style></style>的形式插入html

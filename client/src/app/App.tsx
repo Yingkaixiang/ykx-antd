@@ -1,22 +1,28 @@
+import * as NProgress from "nprogress";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Menu from "components/menu/";
 
+import "../../node_modules/nprogress/nprogress.css";
 import "./App.less";
 
 import Routes from "./router";
 
 function App() {
+  NProgress.start();
   return (
-    <Router>
+    <Router basename="/components">
       <div className="ykx">
-        <div className="ykx-left">
-          <Menu />
-        </div>
-        <div className="ykx-main">
-          <Routes />
+        <header className="ykx-head" />
+        <div className="ykx-body">
+          <div className="ykx-left">
+            <Menu />
+          </div>
+          <div className="ykx-main">
+            <Routes />
+          </div>
         </div>
       </div>
     </Router>

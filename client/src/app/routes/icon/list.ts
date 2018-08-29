@@ -20,4 +20,7 @@ export default [
   {
     name: "ellipsis",
   },
+  {
+    name: "star",
+  },
 ];

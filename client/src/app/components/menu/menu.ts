@@ -6,6 +6,11 @@ export default [
     url: "/",
   },
   {
+    title: "Button",
+    titleChs: "按钮",
+    url: "/button",
+  },
+  {
     title: "Icon",
     titleChs: "图标",
     url: "/icon",
@@ -16,9 +21,19 @@ export default [
     url: "/badge",
   },
   {
+    title: "Input",
+    titleChs: "输入框",
+    url: "/input",
+  },
+  {
     title: "Markdown",
     titleChs: "编辑器",
     url: "/markdown",
+  },
+  {
+    title: "Codebox",
+    titleChs: "代码演示",
+    url: "/codebox",
   },
   {
     title: "Pagination",

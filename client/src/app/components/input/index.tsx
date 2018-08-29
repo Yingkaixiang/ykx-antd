@@ -1,15 +1,18 @@
 /**
  * 输入框
- *
  */
 
 import * as React from "react";
+
+import "./index.less";
 
 interface IInputProps {
   placeholder?: string;
 }
 
-class Input extends React.Component<IInputProps, any> {
+type IInput = IInputProps & React.InputHTMLAttributes<HTMLInputElement>;
+
+class Input extends React.Component<IInput, any> {
   constructor(props: IInputProps) {
     super(props);
   }
@@ -19,11 +22,14 @@ class Input extends React.Component<IInputProps, any> {
   };
 
   render() {
-    const { placeholder } = this.props;
+    const { placeholder, ...restProps } = this.props;
     return (
-      <div>
-        <input placeholder={placeholder} onKeyDown={this.handleKeyDown} />
-      </div>
+      <input
+        className="ykx-input"
+        placeholder={placeholder}
+        onKeyDown={this.handleKeyDown}
+        {...restProps}
+      />
     );
   }
 }
